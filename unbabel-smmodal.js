@@ -171,7 +171,10 @@ class SmModal {
         // Вернуть скролл бар body
         setTimeout(() => {
             if (overModal.length === 0) {
-                $('body').removeAttr('style');
+                $('body').css({
+                    'overflow': 'auto',
+                    'padding-right': '',
+                });
             }
             $(this.modalSelector).css('transition', 'all 0s ' + this.transitionTimingFunction);
             $(this.modalSelector).find('.sm-modal-contant').css('transition', 'all 0s ' + this.transitionTimingFunction);
