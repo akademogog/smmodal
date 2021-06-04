@@ -1,0 +1,23 @@
+@mixin font($f-name, $f-style, $f-weight, $f-url) {
+	@font-face {
+		font-family: $f-name;
+		font-style: $f-style;
+		font-weight: $f-weight;
+		font-display: swap;
+		src: url('../fonts/#{$f-url}.woff2') format('woff2'),
+		url('../fonts/#{$f-url}.woff') format('woff'),
+		url('../fonts/#{$f-url}.ttf') format('truetype'),
+		url('../fonts/#{$f-url}.eot'),
+		url('../fonts/#{$f-url}.eot?#iefix') format('embedded-opentype');
+	}
+}
+
+@include font('Montserrat', normal, 200, 'montserrat/Montserrat-ExtraLight');
+@include font('Montserrat', normal, 300, 'montserrat/Montserrat-Light');
+@include font('Montserrat', italic, 300, 'montserrat/Montserrat-LightItalic');
+@include font('Montserrat', italic, 400, 'montserrat/Montserrat-Italic');
+@include font('Montserrat', normal, 400, 'montserrat/Montserrat-Regular');
+@include font('Montserrat', normal, 500, 'montserrat/Montserrat-Medium');
+@include font('Montserrat', normal, 600, 'montserrat/Montserrat-SemiBold');
+@include font('Montserrat', normal, 800, 'montserrat/Montserrat-ExtraBold');
+@include font('Montserrat', normal, 900, 'montserrat/Montserrat-Black');

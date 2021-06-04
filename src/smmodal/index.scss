@@ -1,0 +1,223 @@
+.sm-modal * {
+    box-sizing: border-box;
+}
+
+.sm-modal *::before,
+.sm-modal *::after {
+	box-sizing: inherit;
+}
+
+.sm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden
+}
+
+.sm-modal-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+    cursor: pointer
+}
+
+.sm-modal-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 50px 0;
+    position: relative;
+}
+
+.sm-modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .6);
+    background-size: cover;
+    background-position: 50%;
+    transition: 0.3s linear;
+}
+
+.sm-modal-contant {
+    position: relative;
+    transform: translate(0px, 0px);
+    background-color: #fff;
+    cursor: default
+}
+
+.sm-modal-contant .modal-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: all .2s linear
+}
+
+.sm-modal-contant .modal-close:before {
+    transform: translate(-50%, -50%) rotate(45deg)
+}
+
+.sm-modal-contant .modal-close:after,
+.sm-modal-contant .modal-close:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #000
+}
+
+.sm-modal-contant .modal-close:after {
+    transform: translate(-50%, -50%) rotate(-45deg)
+}
+
+.sm-modal-contant .modal-close:hover {
+    transform: scale(1.1)
+}
+
+.sm-modal.active {
+    opacity: 1;
+    visibility: visible
+}
+
+.sm-modal.smFade .sm-modal-contant {
+    transform: translate(0px, 0px)
+}
+
+.sm-modal.smFadeUp .sm-modal-contant {
+    transform: translateY(-50px)
+}
+
+.sm-modal.smFadeDown .sm-modal-contant {
+    transform: translateY(50px)
+}
+
+.sm-modal.smFadeLeft .sm-modal-contant {
+    transform: translateX(-50px)
+}
+
+.sm-modal.smFadeRight .sm-modal-contant {
+    transform: translateX(50px)
+}
+
+.sm-modal.leftModal .sm-modal-wrap {
+    padding: 0;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+}
+
+.sm-modal.leftModal .sm-modal-contant {
+    min-height: 100vh
+}
+
+.sm-modal.rightModal .sm-modal-wrap {
+    padding: 0;
+    -ms-flex-pack: end;
+    justify-content: flex-end
+}
+
+.sm-modal.rightModal .sm-modal-contant {
+    min-height: 100vh
+}
+
+// стили адаптивной
+.sm-modal.sm-adaptive {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    width: auto;
+    height: auto;
+    display: block;
+    z-index: initial !important;
+}
+.sm-modal.sm-adaptive .sm-modal-body{
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+.sm-modal.sm-adaptive .sm-modal-wrap{
+    padding: 0px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+.sm-modal.sm-adaptive .sm-modal-overlay{
+    position: relative;
+    width: auto;
+    height: auto;
+}
+.sm-modal.sm-adaptive .sm-modal-content{
+    position: relative;
+    width: auto;
+    height: auto;
+}
+.sm-modal.sm-adaptive .modal-close{
+    display: none;
+}
+
+.sm-modal.smFade.sm-adaptive .sm-modal-contant {
+    transform: translate(0px, 0px)
+}
+.sm-modal.smFadeUp.sm-adaptive .sm-modal-contant {
+    transform: translateY(0px)
+}
+.sm-modal.smFadeDown.sm-adaptive .sm-modal-contant {
+    transform: translateY(0px)
+}
+.sm-modal.smFadeLeft.sm-adaptive .sm-modal-contant {
+    transform: translateX(0px)
+}
+.sm-modal.smFadeRight.sm-adaptive .sm-modal-contant {
+    transform: translateX(0px)
+}
+.sm-modal.leftModal.sm-adaptive .sm-modal-wrap {
+    padding: 0;
+    display: block;
+}
+.sm-modal.leftModal.sm-adaptive .sm-modal-contant {
+    min-height: auto
+}
+.sm-modal.rightModal.sm-adaptive .sm-modal-wrap {
+    padding: 0;
+    display: block;
+}
+.sm-modal.rightModal.sm-adaptive .sm-modal-contant {
+    min-height: auto
+}
+
+//fix нижнего бара в safari
+@media not all and (min-resolution:.001dpcm) {
+    .sm-modal-body {
+        padding-bottom: 120px;
+    }
+}

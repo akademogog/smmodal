@@ -1,0 +1,20 @@
+@import 'blocks/scss/fonts';
+@import "blocks/scss/variables";
+@import "blocks/scss/mixins";
+@import "blocks/scss/scafolding";
+
+// @import "blocks/mixin/breadcrumbs/breadcrumbs";
+// @import "blocks/mixin/checkbox/checkbox";
+// @import "blocks/mixin/radio/radio";
+// @import "blocks/mixin/input/input";
+// @import "blocks/mixin/select/select";
+
+@import "blocks/scss/global";
+
+@import "blocks/header/header";
+@import "blocks/footer/footer";
+
+
+// Стили страниц или секций
+@import "blocks/main-page/index"; // По умолчанию
+

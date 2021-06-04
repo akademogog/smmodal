@@ -1,0 +1,14 @@
+- var currentPage = "main";
+- var footerBack = 'background-image:url()';
+doctype html
+html(lang='ru')
+    include ../blocks/head/head.pug
+    body
+        .wrapper
+            include ../blocks/header/header
+            main.main-page
+                include ../blocks/main-page/index
+            include ../blocks/footer/footer
+            include ../img/svg/svg-sprite.html
+
+        include ../blocks/footer/scripts
