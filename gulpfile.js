@@ -125,7 +125,7 @@ gulp.task('stylesSmModal', function () {
         ])
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        // .pipe(concat('styles.scss'))
+        .pipe(concat('smmodal.css'))
         .pipe(sass().on('error', notify.onError()))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8']))
         .pipe(cssnano({

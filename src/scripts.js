@@ -10,8 +10,8 @@ $(window).on('load', function(){
         modalSelector: '#your-selector3',
         adaptiveModal: 1024,
     });
-    
-    document.querySelectorAll('.your-button')[0].addEventListener('click', function () {
+
+    $('.your-button').on('click', function(){
         smModals['#your-selector'].openModal();
     });
     
